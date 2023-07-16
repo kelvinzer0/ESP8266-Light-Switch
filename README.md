@@ -1,6 +1,6 @@
-# Saklar Web Server
+# Web Server Switch
 
-This is a simple Arduino sketch for controlling multiple switches (saklar) using a web server. The switches are connected to GPIO pins on an ESP8266 module. The sketch sets up a WiFi access point and serves a web page that displays the status of each switch and allows the user to turn them on or off.
+This is a simple Arduino sketch for controlling multiple switches using a web server. The switches are connected to GPIO pins on an ESP8266 module. The sketch sets up a WiFi access point and serves a web page that displays the status of each switch and allows the user to turn them on or off.
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ To run this code, you will need the following libraries:
 
 ## Circuit Diagram
 
-Make sure to connect the switches (saklar) to the appropriate GPIO pins on the ESP8266 module. The code assumes that the switches are connected to GPIO pins D0 to D7.
+Make sure to connect the switches to the appropriate GPIO pins on the ESP8266 module. The code assumes that the switches are connected to GPIO pins D0 to D7.
 
 ## Usage
 
@@ -26,7 +26,7 @@ Make sure to connect the switches (saklar) to the appropriate GPIO pins on the E
 2. The network credentials (SSID and password) are defined as `ssid` and `password` variables.
 3. An instance of the `ESP8266WebServer` class is created, listening on port 80.
 4. The `handleRoot()` function is defined to generate the HTML page displaying the status of the switches.
-5. The `saklarOn()` and `saklarOff()` functions are defined to turn on or off a specific switch based on its index.
+5. The `switchOn()` and `switchOff()` functions are defined to turn on or off a specific switch based on its index.
 6. In the `setup()` function:
    - The ESP8266 module is set up as a soft access point using the provided SSID and password.
    - The GPIO pins connected to the switches are configured as outputs.
@@ -34,4 +34,3 @@ Make sure to connect the switches (saklar) to the appropriate GPIO pins on the E
    - URLs for turning on and off each switch are mapped to the corresponding functions.
    - The web server is started.
 7. In the `loop()` function, the web server is continuously checked for incoming requests.
-
